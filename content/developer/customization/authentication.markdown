@@ -16,12 +16,12 @@ reading this guide, you will be familiar with:
 ## Background
 
 Traditionally, applications that use Spree have needed to use the
-`Spree::User` model that came with the *spree_auth* component of Spree.
+`Spree::User` model that came with the `spree_auth` component of Spree.
 With the advent of 1.2, this is no longer a restriction. The
-*spree_auth* component of Spree has been removed and is now purely
-opt-in. If you have an application that has used the *spree_auth*
+`spree_auth` component of Spree has been removed and is now purely
+opt-in. If you have an application that has used the `spree_auth`
 component in the past and you wish to continue doing so, you will need
-to add this extra line to your *Gemfile*:
+to add this extra line to your `Gemfile`:
 
 <% ruby do %>
     gem 'spree_auth_devise', :git => "git://github.com/spree/spree_auth_devise"
@@ -39,7 +39,7 @@ application that represents the users of your application. This
 model might be provided by gems such as
 [Devise](https://github.com/plataformatec/devise) or
 [Sorcery](https://github.com/NoamB/sorcery). This guide also assumes
-that the application that this *User* model exists in is already a Spree
+that the application that this `User` model exists in is already a Spree
 application.
 
 This model _does not_ need to be called `User`, but for the purposes
@@ -63,7 +63,7 @@ To this:
     Spree.user_class = "User"
 <% end %>
 
-Next, you need to run the custom user generator for Spree which will
+Next, you need to run the custom user generator for Spree. This will
 create two files. The first is a migration that will add the necessary
 Spree fields to your users table, and the second is an extension that
 lives at `lib/spree/authentication_helpers.rb` to the
@@ -127,13 +127,13 @@ Each of the methods defined in this module return values that are the
 most common in Rails applications today, but you may need to customize
 them. In order, they are:
 
-* ***spree_current_user***: Used to tell Spree what the current user
+* `spree_current_user`: Used to tell Spree what the current user
 of a request is.
-* ***spree_login_path***: The location of the login/sign in form in
+* `spree_login_path`: The location of the login/sign in form in
 your application.
-* ***spree_signup_path***: The location of the sign up form in your
+* `spree_signup_path`: The location of the sign up form in your
 application.
-* ***spree_logout_path***: The location of the logout feature of your
+* `spree_logout_path`: The location of the logout feature of your
 application.
 
 ***
