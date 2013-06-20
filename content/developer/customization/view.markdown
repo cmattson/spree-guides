@@ -12,7 +12,7 @@ Spree store. This guide explains the options available, including:
 
 ### Using Deface
 
-Deface is a standalone Rails 3 library that enables you to customize Erb
+Deface is a standalone Rails 3 library that enables you to customize ERB
 templates without needing to directly edit the underlying view file.
 Deface allows you to use standard CSS3 style selectors to target any
 element (including Ruby blocks), and perform an action against all the
@@ -70,13 +70,13 @@ Deface applies an __action__ to element(s) matching the supplied CSS selector. T
 
 Deface currently supports the following actions:
 
-* <tt>:remove</tt> - Removes all elements that match the supplied selector
-* <tt>:replace</tt> - Replaces all elements that match the supplied selector, with the content supplied
-* <tt>:insert_after</tt> - Inserts content supplied after all elements that match the supplied selector
-* <tt>:insert_before</tt> - Inserts content supplied before all elements that match the supplied selector
-* <tt>:insert_top</tt> - Inserts content supplied inside all elements that match the supplied selector, as the first child
-* <tt>:insert_bottom</tt> - Inserts content supplied inside all elements that match the supplied selector, as the last child
-* <tt>:set_attributes</tt> - Sets (or adds) attributes to all elements that match the supplied selector, expects :attributes option to be passed
+* `:remove` - Removes all elements that match the supplied selector
+* `:replace` - Replaces all elements that match the supplied selector, with the content supplied
+* `:insert_after` - Inserts content supplied after all elements that match the supplied selector
+* `:insert_before` - Inserts content supplied before all elements that match the supplied selector
+* `:insert_top` - Inserts content supplied inside all elements that match the supplied selector, as the first child
+* `:insert_bottom` - Inserts content supplied inside all elements that match the supplied selector, as the last child
+* `:set_attributes` - Sets (or adds) attributes to all elements that match the supplied selector, expects :attributes option to be passed
 
 ***
 Not all actions are applicable to all elements. For example, <tt>:insert_top</tt> and <tt>:insert_bottom</tt> expects a parent element with children.
@@ -86,12 +86,12 @@ Not all actions are applicable to all elements. For example, <tt>:insert_top</tt
 
 Deface supports three options for supplying content to be used by an override:
 
-* <tt>:text</tt> - String containing markup
-* <tt>:partial</tt> - Relative path to a partial
-* <tt>:template</tt> - Relative path to a template
+* `:text` - String containing markup
+* `:partial` - Relative path to a partial
+* `:template` - Relative path to a template
 
 ***
-As Deface operates on the Erb source the content supplied to an override can include Erb, it is not limited to just HTML. You also have access to all variables accessible in the original Erb context.
+As Deface operates on the ERB source the content supplied to an override can include ERB, it is not limited to just HTML. You also have access to all variables accessible in the original ERB context.
 ***
 
 #### Targeting elements
@@ -100,7 +100,7 @@ While Deface allows you to use a large subset of CSS3 style selectors (as provid
 
 As Spree views are changed over coming versions, the original HTML elements maybe edited or be removed. We will endeavour to ensure that data-hook / id combination will remain consistent within any single view file (where possible), thus making your overrides more robust and upgrade proof.
 
-For example, spree/products/show.html.erb looks as follows:
+For example, `spree/products/show.html.erb` looks as follows:
 
 ```erb
 <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
@@ -177,12 +177,12 @@ override to ensure maximum protection against changes:
 
 #### Targeting ruby blocks
 
-Deface evaluates all the selectors passed against the original erb view
+Deface evaluates all the selectors passed against the original ERB view
 contents (and importantly not against the finished / generated HTML). In
 order for Deface to make ruby blocks contained in a view parseable they
 are converted into a pseudo markup as follows:
 
-Given the following Erb file:
+Given the following ERB file:
 
 ```erb
 <%% if products.empty? %>
