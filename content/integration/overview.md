@@ -56,4 +56,4 @@ The Poller also provides a heart beat monitor for a store which can raise alerts
 
 Events are essentially log entries regarding interesting details that may be relevant to a store owner with regard to an order, product, or user as messages were processed against them within the system.
 
-Events are persistent and displayed with the Spree administration interface beside each associated object.
+Events are persistent and displayed alongside each associated object in the Spree administration interface.
